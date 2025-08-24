@@ -29,7 +29,8 @@ public class ProducerConf {
         // Kryo 序列化
        // properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KryoSerializer.class.getName());
         //protostuff序列化
-        properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, ProtostuffSerializer.class.getName());
+//        properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, ProtostuffSerializer.class.getName());
+        properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         properties.put(ProducerConfig.MAX_BLOCK_MS_CONFIG, "1");
 
        // properties.put(ProducerConfig.LINGER_MS_CONFIG, 1000*8);

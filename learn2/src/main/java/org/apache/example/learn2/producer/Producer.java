@@ -21,20 +21,18 @@ public class Producer {
         message.setValue(99999L);
 
         ProducerRecord<String, String> record = new ProducerRecord(ProducerConf.topic, "hellotest", kafkaMessage);
-     int i=0;
-      while (true) {
-          System.out.println("第"+ ++i +"次发送开始");
-            producer.send(record, (metadata, exception) -> {
-                System.out.println("exception ==》" + exception);
-                System.out.println("metadata ==》" + metadata);
-            });
-          System.out.println("第"+ i +"次发送结束");
-            //producer.flush();
-            Thread.sleep(1000);
-           // producer.close();
+        int i=0;
+        while (true) {
+              System.out.println("第"+ ++i +"次发送开始");
+                producer.send(record, (metadata, exception) -> {
+                    System.out.println("exception ==》" + exception);
+                    System.out.println("metadata ==》" + metadata);
+                });
+              System.out.println("第"+ i +"次发送结束");
+                //producer.flush();
+                Thread.sleep(1000);
+               // producer.close();
         }
-
-
     }
 
 }

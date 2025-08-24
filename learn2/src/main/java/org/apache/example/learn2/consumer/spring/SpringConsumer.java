@@ -13,7 +13,6 @@ public class SpringConsumer extends AbstractConsumer <String> {
 
 
     @Override
-
     public void onMessage(ConsumerRecord<String, String> record) {
         System.out.println(record);
     }
