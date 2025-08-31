@@ -300,6 +300,7 @@ public class Sender implements Runnable {
         /** 从accumulator中取出消息
          *
          * tp和List<RecordBatch>的对应关系--->为node_id和List<RecordBatch>的对应关系
+         * drain 排水，排除
          */
         Map<Integer, List<ProducerBatch>> batches = this.accumulator.drain(cluster, result.readyNodes,
                 this.maxRequestSize, now);
